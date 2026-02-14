@@ -7,50 +7,27 @@ repo_name: satellite-dev-os/styleguide
 
 theme:
   name: material
-  custom_dir: overrides
   language: ja
-  logo: assets/logo.svg
-  favicon: assets/logo.svg
-  font:
-    text: Noto Sans JP
-    code: JetBrains Mono
   palette:
     - scheme: default
-      primary: custom
-      accent: deep purple
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/weather-night
+        icon: material/brightness-7
         name: ダークモードに切り替え
     - scheme: slate
-      primary: custom
-      accent: deep purple
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-4
         name: ライトモードに切り替え
-  icon:
-    repo: fontawesome/brands/github
-    admonition:
-      note: fontawesome/solid/note-sticky
-      tip: fontawesome/solid/lightbulb
-      warning: fontawesome/solid/triangle-exclamation
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - navigation.footer
-    - navigation.path
-    - navigation.instant
-    - navigation.instant.progress
     - search.suggest
     - search.highlight
-    - search.share
     - content.code.copy
-    - content.code.annotate
-    - content.tabs.link
-    - content.tooltips
-    - toc.follow
-    - announce.dismiss
 
 plugins:
   - search:
@@ -62,35 +39,13 @@ plugins:
 markdown_extensions:
   - tables
   - admonition
-  - attr_list
-  - md_in_html
-  - def_list
-  - footnotes
-  - abbr
   - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.smartsymbols
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tasklist:
-      custom_checkbox: true
   - toc:
       permalink: true
 
@@ -103,14 +58,3 @@ nav:
   - Shell: shell/index.md
   - JSON: json/index.md
   - Markdown: markdown/index.md
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/satellite-dev-os
-      name: SATELLITE on GitHub
-
-extra_css:
-  - stylesheets/extra.css
-
-copyright: Copyright &copy; 2025 - 2026 SATELLITE
