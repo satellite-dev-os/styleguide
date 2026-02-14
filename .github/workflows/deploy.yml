@@ -34,6 +34,20 @@ jobs:
       - name: Build site
         run: mkdocs build
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Encrypt HTML with StatiCrypt
+        env:
+          SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+        run: |
+          npm install -g staticrypt
+          find site -name "*.html" | while read file; do
+            staticrypt "$file" -p "$SITE_PASSWORD" -o "$file"
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
